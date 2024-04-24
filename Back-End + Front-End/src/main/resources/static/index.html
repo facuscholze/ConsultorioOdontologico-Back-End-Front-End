@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Consultorio Dental</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Consultorio Dental</h1>
+    <nav>
+      <ul>
+        <li><a href="/logout" class="logout-link">Cerrar sesión</a></li>
+        <li><a href="/altaOdontologo.html">altaOdontologo</a></li>
+        <li><a href="/index.html">Servicios</a></li>
+        <li><a href="/turno.html">Turnos</a></li>
+        <li><a href="/altaPaciente.html">Alta Paciente</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenido al Consultorio Dental</h2>
+    <p>Ofrecemos servicios de odontología de alta calidad para cuidar de tu sonrisa.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <ul>
+      <li>Extracciones</li>
+      <li>Limpieza dental</li>
+      <li>Empastes</li>
+      <li>Blanqueamiento dental</li>
+      <li>Ortodoncia</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="contact-form">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Consultorio Dental. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

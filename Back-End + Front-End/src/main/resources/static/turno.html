@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <title>Consultorio Dental - Solicitar Turno</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+    /* Estilos CSS */
+    /* para poder usar el fetch en local host inciar chrome ingresando el siguente comando en CMD "
+    "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="[directorio-de-datos-temporales]"" */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    form input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Estilos adicionales */
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #turno-lista  {
+  border: 2px solid #000;
+}
+.turno-lista {
+  border: 1px solid black;
+  padding: 10px;
+}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Consultorio Dental</h1>
+  <nav>
+    <ul>
+      <li><a href="/logout" class="logout-link">Cerrar sesión</a></li>
+      <li><a href="/altaOdontologo.html">altaOdontologo</a></li>
+      <li><a href="/index.html">Servicios</a></li>
+      <li><a href="/turno.html">Turnos</a></li>
+      <li><a href="/altaPaciente.html">Alta Paciente</a></li>
+    </ul>
+  </nav>
+</header>
+  <h2>Solicitar Turno</h2>
+<form id="formulario turno" action="procesar_formulario.php" method="POST">
+  <label for="paciente">Paciente:</label>
+  <select id="paciente" name="paciente" required>
+    <option value="" selected disabled><< Selecciona un paciente >></option>
+  </select>
+
+
+  <label >Fecha y Hora:</label>
+  <input type="datetime-local" id="fecha" name="fecha" required>
+
+  <label for="odontologo">Odontólogo:</label>
+  <select id="odontologo" name="odontologo" required>
+  <option value="" selected disabled> << Selecciona un odontologo >> </option>
+  </select>
+
+  <input type="submit" value="Solicitar Turno">
+</form>
+
+<h2>Modifiar Turno</h2>
+
+<form id="editarTurno" action="editar_formulario.php" method="POST">
+  <label for="turnoId">ID del Turno:</label>
+  <input type="number" id="turnoId" name="turnoId" required>
+
+  <label for="paciente">Paciente:</label>
+  <select id="editarPaciente" name="paciente" required>
+    <option value="" selected disabled>Selecciona un paciente</option>
+  </select>
+
+  <label for="fecha">Fecha y Hora:</label>
+  <input type="datetime-local" id="editarFecha" name="fecha" required>
+
+  <label for="odontologo">Odontólogo:</label>
+  <select id="editarOdontologo" name="odontologo" required>
+    <option value="" selected disabled>Selecciona un odontólogo</option>
+  </select>
+
+  <input type="submit" value="Modificar Turno">
+</form>
+
+
+<div id="turno-lista"></div>
+
+<script type="text/javascript" src="/turnoAlta.js"></script>
+</body>
+</html>
+  

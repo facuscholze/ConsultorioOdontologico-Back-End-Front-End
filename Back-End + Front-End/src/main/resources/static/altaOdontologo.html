@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Consultorio Dental - Alta de Odontólogos</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    form input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Estilos adicionales */
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+        .error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+
+#odontologos-lista  {
+  border: 2px solid #000;
+}
+.odontologos-lista {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#buscador {
+    margin: 20px;
+  }
+
+#buscador-nombre-apellido {
+    margin: 20px;
+  }
+
+#mensaje-no-encontrado {
+  margin: 20px;
+  color: red
+}
+#mensaje-no-encontrado-nombre-apellido {
+  margin: 20px;
+  color: red
+}
+
+
+  </style>
+</head>
+<body>
+<header>
+  <h1>Consultorio Dental</h1>
+  <nav>
+    <ul>
+      <li><a href="/logout" class="logout-link">Cerrar sesión</a></li>
+      <li><a href="/altaOdontologo.html">altaOdontologo</a></li>
+      <li><a href="/index.html">Servicios</a></li>
+      <li><a href="/turno.html">Turnos</a></li>
+      <li><a href="/altaPaciente.html">Alta Paciente</a></li>
+    </ul>
+  </nav>
+</header>
+<div id="buscador">
+  <label for="buscarId">Buscar por ID:</label>
+  <input type="text" id="buscarId" name="buscarId" required placeholder="ID">
+  <button onclick="buscarPorId()">Buscar</button>
+  <div id="resultado"></div>
+
+  <div id="mensaje-no-encontrado" style="display: none;">No se encontró ningún odontólogo con el ID especificado.</div>
+</div>
+
+<div id="buscador-nombre-apellido">
+  <label for="buscarNombre">Buscar por nombre y apellido:</label>
+  <input type="text" id="buscarNombre" name="buscarNombre" required placeholder="Nombre">
+
+  <label for="buscarApellido"></label>
+  <input type="text" id="buscarApellido" name="buscarApellido" required placeholder="Apellido">
+
+  <button onclick="buscarPorNombreApellido()">Buscar</button>
+
+  <div id="resultado-nombre-apellido"></div>
+  <div id="mensaje-no-encontrado-nombre-apellido" style="display: none;">No se encontraron odontólogos con el nombre y apellido especificados.</div>
+</div>
+
+<form id="formulario odontologo" action="procesar_formulario.php" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  <div id="nombre-error" class="error-message"></div>
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" name="apellido" required>
+  <div id="apellido-error" class="error-message"></div>
+
+  <label for="Matricula">Matricula:</label>
+  <input type="text" id="Matricula" name="Matricula" required>
+  <div id="matricula-error" class="error-message"></div>
+
+  <input type="submit" id="btnRegistrar" value="Registrar Odontólogo">
+</form>
+
+<div id="odontologos-lista"></div>
+
+  <script type="text/javascript" src="/darAlta.js"></script>
+</body>
+</html>
